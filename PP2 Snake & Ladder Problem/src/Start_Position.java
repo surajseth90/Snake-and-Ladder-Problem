@@ -24,6 +24,10 @@ public class Start_Position {
 			else
 				player =0;
 		}
+		if(player >100)
+		{
+			player = player - die;
+		}
 		if(player==100)
 		{
 			break;
