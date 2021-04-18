@@ -4,48 +4,171 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Start_Position {
 
 	public static void main(String[] args) {
-		int Position_of_Player = 0;
-		int n=0;
-		ArrayList<Integer> arr = new ArrayList<Integer>();
+		int Position_of_Player_1 = 0;
+		int Position_of_Player_2 = 0;
+		int n1=0;
+		int n2=0;
+		ArrayList<Integer> arr1 = new ArrayList<Integer>();
+		ArrayList<Integer> arr2 = new ArrayList<Integer>();
 
 		
-		while(Position_of_Player!=100)
+		while(Position_of_Player_1!=100)
 		{
-		int die = ThreadLocalRandom.current() .nextInt(1,7);
+		int dice = ThreadLocalRandom.current() .nextInt(1,7);
 		int check_option = ThreadLocalRandom.current() .nextInt(0,3);
 		if(check_option==0)
 		{
-			Position_of_Player = Position_of_Player ;
-			arr.add(n,Position_of_Player);
+			Position_of_Player_1 = Position_of_Player_1 ;
+			arr1.add(n1,Position_of_Player_1);
+			n1++;
 		}
 		else if(check_option==1)
 		{
-			Position_of_Player = Position_of_Player + die;
-			arr.add(n,Position_of_Player);
+			Position_of_Player_1 = Position_of_Player_1 + dice;
+			arr1.add(n1,Position_of_Player_1);
+			n1++;
+			if(Position_of_Player_1 >100)
+			{
+				Position_of_Player_1 = Position_of_Player_1 - dice;
+			}
+			while(check_option==1)
+			{
+			dice = ThreadLocalRandom.current() .nextInt(1,7);
+			check_option = ThreadLocalRandom.current() .nextInt(0,3);	
+			if(check_option==1)
+				{
+				Position_of_Player_1 = Position_of_Player_1 + dice;
+				arr1.add(n1,Position_of_Player_1);
+				n1++;
+				if(Position_of_Player_1 >100)
+				{
+					Position_of_Player_1 = Position_of_Player_1 - dice;
+				}
+				}
+			else if(check_option==0)
+			{
+				Position_of_Player_1 = Position_of_Player_1 ;
+				arr1.add(n1,Position_of_Player_1);	
+				n1++;
+			}
+			else
+			{
+				 Position_of_Player_1 = Position_of_Player_1 - dice;
+				if(Position_of_Player_1>0)
+					Position_of_Player_1 = Position_of_Player_1;
+				else
+					Position_of_Player_1 =0;
+				arr1.add(n1,Position_of_Player_1);
+				n1++;
+			}
+			if(Position_of_Player_1==100)
+			{
+				break;
+			}
+			}     
+
 		}
 		else
 		{
-			 Position_of_Player = Position_of_Player - die;
-			if(Position_of_Player>0)
-				Position_of_Player = Position_of_Player;
+			 Position_of_Player_1 = Position_of_Player_1 - dice;
+			if(Position_of_Player_1>0)
+				Position_of_Player_1 = Position_of_Player_1;
 			else
-				Position_of_Player =0;
-			arr.add(n,Position_of_Player);
+				Position_of_Player_1 =0;
+			arr1.add(n1,Position_of_Player_1);
+			n1++;
 		}
-		if(Position_of_Player >100)
+		if(Position_of_Player_1 >100)
 		{
-			Position_of_Player = Position_of_Player - die;
+			Position_of_Player_1 = Position_of_Player_1 - dice;
 		}
-		if(Position_of_Player==100)
+		if(Position_of_Player_1==100)
 		{
-			
-			System.out.println("Dice was played "+(n+1) +
-					" times and player reached at the winning position "+Position_of_Player);
 			break;
 		}
-		System.out.println("Dice was played "+(n+1) +
-				" times and player reached at the position "+Position_of_Player);
-		n++;
 		}
+		
+		
+		while(Position_of_Player_2!=100)
+		{
+		int dice = ThreadLocalRandom.current() .nextInt(1,7);
+		int check_option = ThreadLocalRandom.current() .nextInt(0,3);
+		if(check_option==0)
+		{
+			Position_of_Player_2 = Position_of_Player_2 ;
+			arr2.add(n2,Position_of_Player_2);
+			n2++;
+		}
+		else if(check_option==1)
+		{
+			Position_of_Player_2 = Position_of_Player_2 + dice;
+			arr2.add(n2,Position_of_Player_2);
+			n2++;
+			if(Position_of_Player_2 >100)
+			{
+				Position_of_Player_2= Position_of_Player_2 - dice;
+			}
+					while(check_option==1)
+					{
+						dice = ThreadLocalRandom.current() .nextInt(1,7);
+						check_option = ThreadLocalRandom.current() .nextInt(0,3);	
+							if(check_option==1)
+								{
+									Position_of_Player_2 = Position_of_Player_2 + dice;
+									arr2.add(n2,Position_of_Player_2);
+									n2++;
+									if(Position_of_Player_2 >100)
+									{
+										Position_of_Player_2 = Position_of_Player_2 - dice;
+									}
+								}
+							else if(check_option==0)
+								{
+									Position_of_Player_2 = Position_of_Player_2 ;
+									arr2.add(n2,Position_of_Player_2);	
+									n2++;
+								}
+							else
+								{
+									Position_of_Player_2 = Position_of_Player_2 - dice;
+									if(Position_of_Player_2>0)
+										Position_of_Player_2 = Position_of_Player_2;
+									else
+										Position_of_Player_2 =0;
+									arr2.add(n2,Position_of_Player_2);
+									n2++;
+								}
+							if(Position_of_Player_2==100)
+							{
+								break;
+							}
+					}     
+		
+			}
+		else
+		{
+			 Position_of_Player_2 = Position_of_Player_2 - dice;
+			if(Position_of_Player_2>0)
+				Position_of_Player_2 = Position_of_Player_2;
+			else
+				Position_of_Player_2 =0;
+			arr2.add(n2,Position_of_Player_2);
+			n2++;
+		}
+		if(Position_of_Player_2 >100)
+		{
+			Position_of_Player_2 = Position_of_Player_2 - dice;
+		}
+		if(Position_of_Player_2==100)
+		{
+			break;
+		}
+		}
+		if(n1>n2)
+		{
+			System.out.println("Player 2 won the game by rolling the dice : "+n2 +" times");
+		}
+		else
+			System.out.println("Player 1 won the game by rolling the dice : "+n1 +" times");
 	}
 }
