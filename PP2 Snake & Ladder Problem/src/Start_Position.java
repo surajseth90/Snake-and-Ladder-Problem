@@ -145,24 +145,24 @@ public class Start_Position {
 					}     
 		
 			}
-		else
-		{
-			 Position_of_Player_2 = Position_of_Player_2 - dice;
+			else
+			{
+			Position_of_Player_2 = Position_of_Player_2 - dice;
 			if(Position_of_Player_2>0)
 				Position_of_Player_2 = Position_of_Player_2;
 			else
 				Position_of_Player_2 =0;
 			arr2.add(n2,Position_of_Player_2);
 			n2++;
-		}
-		if(Position_of_Player_2 >100)
-		{
-			Position_of_Player_2 = Position_of_Player_2 - dice;
-		}
-		if(Position_of_Player_2==100)
-		{
-			break;
-		}
+			}
+			if(Position_of_Player_2 >100)
+				{
+					Position_of_Player_2 = Position_of_Player_2 - dice;
+				}
+			if(Position_of_Player_2==100)
+				{
+				break;
+				}
 		}
 		if(n1>n2)
 		{
